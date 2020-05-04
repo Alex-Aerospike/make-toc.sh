@@ -99,6 +99,9 @@ makeToc() {
 
     # Replace spaces in anchor links with hyphens
     _sed -i -r ":a; s/\(#(.+)([ ]+)(.*)\)$/(#\1-\3)/g; ta" $OUTPUT
+    
+    # Replace periods in anchor links with hyphens
+    _sed -i -r ":a; s/\(#(.+)([\.]+)(.*)\)$/(#\1-\3)/g; ta" $OUTPUT
 
     # Normalise monospace anchor links (remove backticks)
     _sed -i -r ":a; s/\(#(.*)\`(.*)\`(.*)\)$/(#\1\2\3)/g; ta" $OUTPUT
